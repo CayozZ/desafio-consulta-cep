@@ -95,7 +95,24 @@
     margin-bottom: 6px;
     color: #333;
   }
-
+  .botoes {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .botoes button {
+    flex: 1;
+  }
+  
+  #btn-limpar {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  #btn-limpar:hover {
+    background-color: #cacaca;
+  }
+  
     @media (max-width: 480px) {
       body {
         padding: 16px 12px;

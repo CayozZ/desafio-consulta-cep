@@ -2,6 +2,15 @@ const form = document.querySelector('#cep-form');
 const inputCep = document.querySelector('#cep');
 const resultado = document.querySelector('#resultado');
 const erro = document.querySelector('#erro');
+const btnLimpar = document.querySelector('#btn-limpar');
+
+btnLimpar.addEventListener('click', function() {
+  inputCep.value = '';
+  erro.textContent = '';
+  resultado.innerHTML = '';
+  resultado.style.display = 'none';
+  inputCep.focus();
+});
 
 form.addEventListener('submit', async function(evento) {
   evento.preventDefault();
