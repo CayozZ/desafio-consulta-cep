@@ -33,3 +33,7 @@ https://viacep.com.br/
 - Manipulação do DOM com querySelector e innerHTML
 - Consumo de API com fetch e tratamento de JSON
 - Controle de versão com Git e publicação no GitHub
+
+## Preview
+
+![Preview do projeto](preview.png)
