@@ -3,6 +3,12 @@ const inputCep = document.querySelector('#cep');
 const resultado = document.querySelector('#resultado');
 const erro = document.querySelector('#erro');
 const btnLimpar = document.querySelector('#btn-limpar');
+
+const ultimoCep = localStorage.getItem('ultimoCep');
+if (ultimoCep) {
+  inputCep.value = ultimoCep;
+}
+
 inputCep.addEventListener('input', function() {
   let valor = inputCep.value.replace(/\D/g, '');
   if (valor.length > 5) {
@@ -25,8 +31,8 @@ form.addEventListener('submit', async function(evento) {
   const cep = inputCep.value.replace(/\D/g, '');
 
   erro.textContent = '';
-  resultado.innerHTML = '';
   resultado.style.display = 'none';
+  resultado.innerHTML = '';
 
   if (cep.length !== 8) {
     erro.textContent = 'Digite um CEP com 8 números.';
@@ -47,6 +53,9 @@ form.addEventListener('submit', async function(evento) {
       return;
     }
 
+    localStorage.setItem('ultimoCep', cep);
+
+    resultado.style.display = 'block';
     resultado.innerHTML =
       '<h2>Endereço encontrado</h2>' +
       '<p><strong>CEP:</strong> ' + dados.cep + '</p>' +
@@ -60,4 +69,5 @@ form.addEventListener('submit', async function(evento) {
     resultado.innerHTML = '';
     erro.textContent = 'Não foi possível consultar o CEP. Verifique sua conexão.';
   }
+
 });
