@@ -3,6 +3,13 @@ const inputCep = document.querySelector('#cep');
 const resultado = document.querySelector('#resultado');
 const erro = document.querySelector('#erro');
 const btnLimpar = document.querySelector('#btn-limpar');
+inputCep.addEventListener('input', function() {
+  let valor = inputCep.value.replace(/\D/g, '');
+  if (valor.length > 5) {
+    valor = valor.slice(0, 5) + '-' + valor.slice(5, 8);
+  }
+  inputCep.value = valor;
+});
 
 btnLimpar.addEventListener('click', function() {
   inputCep.value = '';

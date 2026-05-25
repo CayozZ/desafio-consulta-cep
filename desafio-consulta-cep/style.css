@@ -95,10 +95,7 @@
     margin-bottom: 6px;
     color: #333;
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> c38384052c030465b1470aa1394f124ca35eabcf
   .botoes {
     display: flex;
     gap: 10px;
@@ -116,7 +113,7 @@
   #btn-limpar:hover {
     background-color: #cacaca;
   }
-  
+
     @media (max-width: 480px) {
       body {
         padding: 16px 12px;
