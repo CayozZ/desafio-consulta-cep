@@ -9,13 +9,16 @@ form.addEventListener('submit', async function(evento) {
   const cep = inputCep.value.replace(/\D/g, '');
 
   erro.textContent = '';
-  resultado.style.display = 'none';
   resultado.innerHTML = '';
+  resultado.style.display = 'none';
 
   if (cep.length !== 8) {
     erro.textContent = 'Digite um CEP com 8 números.';
     return;
   }
+
+  resultado.style.display = 'block';
+  resultado.innerHTML = '<p>Consultando...</p>';
 
   try {
     const resposta = await fetch('https://viacep.com.br/ws/' + cep + '/json/');
@@ -28,7 +31,6 @@ form.addEventListener('submit', async function(evento) {
       return;
     }
 
-    resultado.style.display = 'block';
     resultado.innerHTML =
       '<h2>Endereço encontrado</h2>' +
       '<p><strong>CEP:</strong> ' + dados.cep + '</p>' +
@@ -42,5 +44,4 @@ form.addEventListener('submit', async function(evento) {
     resultado.innerHTML = '';
     erro.textContent = 'Não foi possível consultar o CEP. Verifique sua conexão.';
   }
-
 });
