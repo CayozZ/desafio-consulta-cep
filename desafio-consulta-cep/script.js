@@ -21,6 +21,13 @@ form.addEventListener('submit', async function(evento) {
     const resposta = await fetch('https://viacep.com.br/ws/' + cep + '/json/');
     const dados = await resposta.json();
 
+    if (dados.erro) {
+      resultado.style.display = 'none';
+      resultado.innerHTML = '';
+      erro.textContent = 'CEP não encontrado. Verifique e tente novamente.';
+      return;
+    }
+
     resultado.style.display = 'block';
     resultado.innerHTML =
       '<h2>Endereço encontrado</h2>' +
@@ -31,6 +38,9 @@ form.addEventListener('submit', async function(evento) {
       '<p><strong>Estado:</strong> ' + dados.uf + '</p>';
 
   } catch (error) {
+    resultado.style.display = 'none';
+    resultado.innerHTML = '';
     erro.textContent = 'Não foi possível consultar o CEP. Verifique sua conexão.';
   }
+
 });
