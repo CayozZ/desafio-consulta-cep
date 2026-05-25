@@ -3,6 +3,17 @@ const inputCep = document.querySelector('#cep');
 const resultado = document.querySelector('#resultado');
 const erro = document.querySelector('#erro');
 const btnLimpar = document.querySelector('#btn-limpar');
+const btnTema = document.querySelector('#btn-tema');
+
+btnTema.addEventListener('click', function() {
+  document.body.classList.toggle('escuro');
+  if (document.body.classList.contains('escuro')) {
+    btnTema.textContent = '☀️ Modo claro';
+  } else {
+    btnTema.textContent = '🌙 Modo escuro';
+  }
+});
+
 
 const ultimoCep = localStorage.getItem('ultimoCep');
 if (ultimoCep) {

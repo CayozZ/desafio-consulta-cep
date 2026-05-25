@@ -14,7 +14,7 @@
 
     <form id="cep-form">
       <label for="cep">CEP</label>
-      <input type="text" id="cep" placeholder="Ex: 01001-000" maxlength="9">
+      <input type="text" id="cep" placeholder="Ex: 01001-000" maxlength="9" autocomplete="off">
       <div class="botoes">
         <button type="submit">Consultar</button>
         <button type="button" id="btn-limpar">Limpar</button>
@@ -24,6 +24,8 @@
     <p id="erro" class="mensagem-erro"></p>
 
     <div id="resultado"></div>
+
+    <button type="button" id="btn-tema">🌙 Modo escuro</button>
   </div>
 
   <script src="script.js"></script>

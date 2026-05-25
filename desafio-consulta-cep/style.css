@@ -113,7 +113,60 @@
   #btn-limpar:hover {
     background-color: #cacaca;
   }
-
+  body.escuro {
+    background-color: #1a1a2e;
+  }
+  
+  body.escuro .container {
+    background-color: #16213e;
+    color: #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  body.escuro h1 {
+    color: #e0e0e0;
+  }
+  
+  body.escuro label {
+    color: #ccc;
+  }
+  
+  body.escuro input {
+    background-color: #0f3460;
+    border-color: #444;
+    color: #e0e0e0;
+  }
+  
+  body.escuro #resultado {
+    background-color: #0f3460;
+  }
+  
+  body.escuro #resultado p {
+    color: #ccc;
+  }
+  
+  body.escuro #resultado h2 {
+    color: #e0e0e0;
+  }
+  
+  body.escuro p {
+    color: #aaa;
+  }
+  
+  #btn-tema {
+    margin-top: 20px;
+    background-color: transparent;
+    color: #4a7ef5;
+    border: 1px solid #4a7ef5;
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  #btn-tema:hover {
+    background-color: #4a7ef5;
+    color: white;
+  }
+  
     @media (max-width: 480px) {
       body {
         padding: 16px 12px;
